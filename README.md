@@ -3,3 +3,6 @@
 </br> To use this apps, you must will do some steps: 
 </br> 1.) Create your telegram bot, by using @BotFather, and get the  bot TOKEN.
 </br> 2.) Create a dev account on google, and get the google drive API with the credenties
+</br> 3.) Use npm node.js packets:
+</br>   npm install telegraf
+</br>   npm install googleapis@39 --save
