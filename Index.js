@@ -143,13 +143,15 @@ bot.command('download', (ctx) =>
                 ...getDifference(files, massiveId)
             ]
               console.log(checkValue.length)
+           for(let p = 0; p < usersId.length; p++) {
              for (let i = 0; i < checkValue.length; i++) {
 
                      // the second argument of sendDocument method use a Google Drive ref download link
-                 bot.telegram.sendDocument(ctx.chat.id, `https://docs.google.com/uc?export=download&id=${checkValue[i].id}`);
+                 bot.telegram.sendDocument(usersId[p], `https://docs.google.com/uc?export=download&id=${checkValue[i].id}`);
 
 
              }
+           }
              massiveId = Object.assign([], files);
          }
      }, 2000)
