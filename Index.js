@@ -21,6 +21,7 @@ bot.use(sender)
 let  files = [];
 let massiveId = [];
 let checkValue = [];
+let usersId = [];
 
 let users = ['user_id', 'user_id', 'user_id']
  let chat_id = 'chat_id';
@@ -110,10 +111,20 @@ function getDifference(array1, array2){
 
 }
 
+function broadcastQuery(arg_ctx) {
+    if(!(usersId.includes(arg_ctx.chat.id))) {
+        usersId.push(arg_ctx.chat.id)
+        usersId.forEach(element => console.log(element));
+    }
+    else  {
+        return null;
+    }
+}
 
 
 bot.command('download', (ctx) =>
-    {
+    {   
+    broadcastQuery(ctx);
      setInterval( () => {
 
          checkValue = [
